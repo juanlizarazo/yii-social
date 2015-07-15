@@ -2,8 +2,8 @@
 
 class m150715_054411_initial_migration extends CDbMigration
 {
-	public function up()
-	{
+    public function up()
+    {
         // Original blog schema sql turned into a migration
         // TODO: Turn into standard yii migration statements
         $sql = <<<'SQL'
@@ -68,13 +68,13 @@ class m150715_054411_initial_migration extends CDbMigration
 SQL;
 
         Yii::app()->db->createCommand($sql)->execute();
-	}
+    }
 
-	public function down()
-	{
+    public function down()
+    {
         $this->dropTable('lookup');
         $this->dropTable('comment');
         $this->dropTable('post');
         $this->dropTable('user');
-	}
+    }
 }
