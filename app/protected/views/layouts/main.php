@@ -61,6 +61,18 @@
     </div>
 </nav>
 
+
+<!-- flash messages -->
+<div class="container">
+    <? foreach(Yii::app()->user->getFlashes() as $type => $message) : ?>
+        <div class="alert alert-<?= $type ?> alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?= $message ?>
+        </div>
+    <? endforeach ?>
+</div>
+<!--/ flash messagest-->
+
 <!-- yield to content -->
 <?= $content ?>
 <!--/ yield to content-->

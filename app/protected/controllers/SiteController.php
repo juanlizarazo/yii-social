@@ -110,7 +110,11 @@ class SiteController extends Controller
             }
 
             if ($model->save()) {
+                // TODO: Use locales for user messages
+                Yii::app()->user->setFlash('success', 'Account successfully created! Please sign in now.');
                 $this->redirect('/site/login');
+            } else {
+                Yii::app()->user->setFlash('error', 'There were errors with the request, please try again.');
             }
         }
 
