@@ -116,24 +116,28 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$criteria=new CDbCriteria(array(
-			'condition'=>'status='.Post::STATUS_PUBLISHED,
-			'order'=>'update_time DESC',
-			'with'=>'commentCount',
-		));
-		if(isset($_GET['tag']))
-			$criteria->addSearchCondition('tags',$_GET['tag']);
+        if (Yii::app()->user->isGuest) {
+            $this->redirect('/');
+        }
 
-		$dataProvider=new CActiveDataProvider('Post', array(
-			'pagination'=>array(
-				'pageSize'=>Yii::app()->params['postsPerPage'],
-			),
-			'criteria'=>$criteria,
-		));
+        $criteria=new CDbCriteria(array(
+            'condition'=>'status='.Post::STATUS_PUBLISHED,
+            'order'=>'update_time DESC',
+            'with'=>'commentCount',
+        ));
+        if(isset($_GET['tag']))
+            $criteria->addSearchCondition('tags',$_GET['tag']);
 
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $dataProvider=new CActiveDataProvider('Post', array(
+            'pagination'=>array(
+                'pageSize'=>Yii::app()->params['postsPerPage'],
+            ),
+            'criteria'=>$criteria,
+        ));
+
+        $this->render('index', array(
+            'dataProvider'=>$dataProvider,
+        ));
 	}
 
 	/**
