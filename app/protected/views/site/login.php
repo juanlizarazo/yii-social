@@ -1,46 +1,38 @@
-<?php
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
-?>
+<? $this->pageTitle=Yii::app()->name . ' - Login' ?>
 
-<h1>Login</h1>
+<div class="container">
+    <div class="col-sm-offset-2 col-sm-8">
+        <h2 class="text-primary">Login</h2>
 
-<p>Please fill out the following form with your login credentials:</p>
+        <?
+            $form = $this->beginWidget('CActiveForm', [
+                'id'=>'login-form',
+                'enableAjaxValidation' => true,
+            ])
+        ?>
 
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableAjaxValidation'=>true,
-)); ?>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'username') ?>
+            <?php echo $form->textField($model,'username', ['class' => 'form-control']) ?>
+            <?php echo $form->error($model,'username', ['class' => 'text-danger']) ?>
+        </div>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'password') ?>
+            <?php echo $form->passwordField($model,'password', ['class' => 'form-control']) ?>
+            <?php echo $form->error($model,'password', ['class' => 'text-danger']) ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
+        <div class="form-group">
+            <?php echo $form->checkBox($model,'rememberMe') ?>
+            <?php echo $form->label($model,'rememberMe') ?>
+            <?php echo $form->error($model,'rememberMe') ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <tt>demo/demo</tt>.
-		</p>
-	</div>
+        <div class="form-group">
+            <?php echo CHtml::submitButton('Login', ['class' => 'btn btn-primary']) ?>
+        </div>
 
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
-
-	<div class="row submit">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+        <? $this->endWidget(); ?>
+    </div>
+</div>
