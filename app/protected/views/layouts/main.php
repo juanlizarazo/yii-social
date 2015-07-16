@@ -67,12 +67,17 @@
         ])
     ?>
 
-    <div class="container-fluid">
-        <?= $content ?>
-    </div>
+    <!-- yield to content -->
+    <?= $content ?>
+    <!--/ yield to content-->
 
-    <div id="footer">
-        Juan Lizarazo &copy; <?= date('Y'); ?> - <?= Yii::powered() ?>
-    </div>
+    <br>
+    <hr>
+    <footer>
+        <div class="container">
+            Juan Lizarazo &copy; <?= date('Y'); ?>
+            <span class="pull-right"><?= Yii::powered() ?></span>
+        </div>
+    </footer>
 </body>
 </html>

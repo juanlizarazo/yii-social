@@ -1,18 +1,17 @@
-<?php $this->beginContent('/layouts/main'); ?>
-<div class="container">
-	<div class="span-18">
-		<div id="content">
-			<?php echo $content; ?>
-		</div><!-- content -->
-	</div>
-	<div class="span-6 last">
+<? $this->beginContent('/layouts/main') ?>
+<div class="container-fluid">
+    <div class="col-lg-9">
+        <?= $content ?>
+    </div>
+
+	<div class="col-lg-3">
 		<div id="sidebar">
 			<?php if(!Yii::app()->user->isGuest) $this->widget('UserMenu'); ?>
 
 			<?php $this->widget('RecentComments', array(
 				'maxComments'=>Yii::app()->params['recentCommentCount'],
 			)); ?>
-		</div><!-- sidebar -->
+		</div>
 	</div>
 </div>
-<?php $this->endContent(); ?>
+<? $this->endContent() ?>
