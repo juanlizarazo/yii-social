@@ -2,7 +2,8 @@
     "name": "juan/yii-social",
     "description": "Social features focus with yii 1.1 framework and mysql",
     "require": {
-        "twbs/bootstrap": "^3.3"
+        "twbs/bootstrap": "^3.3",
+        "components/jquery": "^2.1"
     },
     "config": {
         "vendor-dir": "app/vendor"
