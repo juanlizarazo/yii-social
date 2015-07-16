@@ -32,12 +32,12 @@ class User extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('username, password, email', 'required'),
-			array('username, password, email', 'length', 'max'=>128),
-		);
+        // TODO: Replace user message with locales
+		return [
+            ['username', 'unique', 'message' => 'Sorry, this username has already been taken.'],
+			['username, password, email', 'required'],
+			['username, password, email', 'length', 'max' => 128]
+		];
 	}
 
 	/**

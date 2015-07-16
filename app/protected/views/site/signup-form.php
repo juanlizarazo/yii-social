@@ -1,40 +1,55 @@
-<h1 class="text-primary">Welcome to Yii-Social<small class="text-muted"> - It's free and always will be.</small></h1>
+<div class="container">
 
-<? $this->pageTitle=Yii::app()->name . ' - Login' ?>
-
-<h1>Sign up</h1>
-
-<div class="form">
-    <?
-    $form = $this->beginWidget('CActiveForm', [
-        'id' => 'signup-form',
-        'enableAjaxValidation' => true
-    ])
-    ?>
-
-    <p class="note">Fields with <span class="required">*</span> are required.</p>
-
-    <div class="row">
-        <?= $form->labelEx($model, 'username') ?>
-        <?= $form->textField($model, 'username') ?>
-        <?= $form->error($model, 'username') ?>
+    <div class="col-sm-6 bs-callout bs-callout-primary">
+        <br><br>
+        <h2>Connect with friends and the world around you on yii-social.</h2>
+        <hr>
+        <ul class="list-unstyled">
+            <li><i class="glyphicon glyphicon-picture"></i> See photos and updates</li>
+            <li><i class="glyphicon glyphicon-stats"></i> See what's new</li>
+            <li><i class="glyphicon glyphicon-search"></i> Find more</li>
+        </ul>
     </div>
 
-    <div class="row">
-        <?= $form->labelEx($model, 'email') ?>
-        <?= $form->textField($model, 'email') ?>
-        <?= $form->error($model, 'email') ?>
-    </div>
+    <div class="col-sm-6">
+        <h1 class="text-primary">
+            Sign up<br>
+            <small class="text-muted">It's free and always will be.</small>
+        </h1>
 
-    <div class="row">
-        <?= $form->labelEx($model, 'password') ?>
-        <?= $form->passwordField($model, 'password') ?>
-        <?= $form->error($model, 'password') ?>
-    </div>
+        <? $this->pageTitle=Yii::app()->name . ' - Login' ?>
 
-    <div class="row submit">
-        <?= CHtml::submitButton('Sign up') ?>
-    </div>
 
-    <? $this->endWidget(); ?>
+
+        <?
+            $form = $this->beginWidget('CActiveForm', [
+                'id' => 'signup-form',
+                'enableAjaxValidation' => true
+            ])
+        ?>
+
+        <div class="form-group">
+            <?= $form->labelEx($model, 'username') ?>
+            <?= $form->textField($model, 'username', ['class' => 'form-control']) ?>
+            <?= $form->error($model, 'username', ['class' => 'text-danger']) ?>
+        </div>
+
+        <div class="form-group">
+            <?= $form->labelEx($model, 'email') ?>
+            <?= $form->textField($model, 'email', ['class' => 'form-control']) ?>
+            <?= $form->error($model, 'email', ['class' => 'text-danger']) ?>
+        </div>
+
+        <div class="form-group">
+            <?= $form->labelEx($model, 'password') ?>
+            <?= $form->passwordField($model, 'password', ['class' => 'form-control']) ?>
+            <?= $form->error($model, 'password', ['class' => 'text-danger']) ?>
+        </div>
+
+        <div class="form-group">
+            <?= CHtml::submitButton('Sign up', ['class' => 'btn btn-success']) ?>
+        </div>
+
+        <? $this->endWidget() ?>
+    </div>
 </div>

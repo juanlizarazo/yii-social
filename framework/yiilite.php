@@ -4785,7 +4785,7 @@ class CHtml
 	public static $errorContainerTag='div';
 	public static $requiredCss='required';
 	public static $beforeRequiredLabel='';
-	public static $afterRequiredLabel=' <span class="required">*</span>';
+	public static $afterRequiredLabel='<span class="required">*</span>';
 	public static $count=0;
 	public static $liveEvents=true;
 	public static $closeSingleTags=true;

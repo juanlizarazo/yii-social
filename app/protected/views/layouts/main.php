@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?= Yii::app()->request->baseUrl ?>/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= Yii::app()->request->baseUrl ?>/css/yii-social.css">
     <script type="text/javascript" src="<?= Yii::app()->request->baseUrl ?>/vendor/components/jquery/jquery.js"></script>
     <script type="text/javascript" src="<?= Yii::app()->request->baseUrl ?>/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 

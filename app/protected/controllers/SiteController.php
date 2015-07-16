@@ -114,7 +114,7 @@ class SiteController extends Controller
                 Yii::app()->user->setFlash('success', 'Account successfully created! Please sign in now.');
                 $this->redirect('/site/login');
             } else {
-                Yii::app()->user->setFlash('error', 'There were errors with the request, please try again.');
+                Yii::app()->user->setFlash('danger', 'There were errors with the request, please try again.');
             }
         }
 
