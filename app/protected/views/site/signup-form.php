@@ -19,8 +19,6 @@
 
         <? $this->pageTitle=Yii::app()->name . ' - Login' ?>
 
-
-
         <?
             $form = $this->beginWidget('CActiveForm', [
                 'id' => 'signup-form',
