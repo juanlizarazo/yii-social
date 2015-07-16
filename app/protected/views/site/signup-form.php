@@ -1,7 +1,6 @@
 <div class="container">
 
-    <div class="col-sm-6 bs-callout bs-callout-primary">
-        <br><br>
+    <div class="col-sm-6 bs-callout bs-callout-primary top-20">
         <h2>Connect with friends and the world around you on yii-social.</h2>
         <hr>
         <ul class="list-unstyled">

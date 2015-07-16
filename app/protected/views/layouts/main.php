@@ -35,8 +35,8 @@
                 $this->widget('zii.widgets.CMenu', [
                     'items' => [
                         ['label' => 'Home', 'url' => ['post/index']],
-                        ['label' => 'About', 'url' => ['site/page', 'view'=>'about']],
-                        ['label'=>'Contact', 'url' => ['site/contact']]
+                        ['label' => 'Profile', 'url' => ['profile/index'], 'visible' => !Yii::app()->user->isGuest],
+                        ['label' => 'Contact', 'url' => ['site/contact']]
                     ],
                     'activeCssClass' => 'active',
                     'htmlOptions' => [ 'class' => 'nav navbar-nav' ],

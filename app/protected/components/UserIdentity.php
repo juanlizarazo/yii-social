@@ -22,11 +22,12 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 		{
-			$this->_id=$user->id;
-			$this->username=$user->username;
-			$this->errorCode=self::ERROR_NONE;
+			$this->_id = $user->id;
+            $this->setState('email', $user->email);
+            $this->setState('profile_picture', null);
+			$this->errorCode = self::ERROR_NONE;
 		}
-		return $this->errorCode==self::ERROR_NONE;
+		return $this->errorCode == self::ERROR_NONE;
 	}
 
 	/**
