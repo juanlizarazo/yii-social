@@ -61,12 +61,6 @@
     </div>
 </nav>
 
-<?
-$this->widget('zii.widgets.CBreadcrumbs', [
-    'links' => $this->breadcrumbs
-])
-?>
-
 <!-- yield to content -->
 <?= $content ?>
 <!--/ yield to content-->

@@ -1,9 +1,13 @@
-<?php if(!empty($_GET['tag'])): ?>
-<h1>Posts Tagged with <i><?php echo CHtml::encode($_GET['tag']); ?></i></h1>
-<?php endif; ?>
+<? if (!Yii::app()->user->isGuest) :
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-	'template'=>"{items}\n{pager}",
-)); ?>
+    $this->widget('zii.widgets.CListView', [
+        'dataProvider'=>$dataProvider,
+        'itemView'=>'_view',
+        'template'=>"{items}\n{pager}",
+    ]);
+?>
+<? else : ?>
+    <h1 class="text-primary">Welcome to Yii-Social<small class="text-muted"> - It's free and always will be.</small></h1>
+
+    TODO: Sign up form here
+<? endif ?>
